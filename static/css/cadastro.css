@@ -1,0 +1,116 @@
+body{
+	  background-image: url('../imagens/fundo1.jpg');
+	  background-repeat: no-repeat;
+	  background-size: 100% 100%;
+}
+#logo{
+      position: absolute;
+      left:48%;
+      top:1%;
+}
+#topo{
+     background-color:#F5F5DC; 
+     position: relative;
+     top:-1%;
+     left:-2%;
+     width: 102.4%;
+     height: 12%;
+}
+#TITULO{
+	color:white;
+	font-family: georgia;
+	font-size: 30pt;
+	position: absolute;
+	left:43.7%;
+}
+.entradas{
+	position: absolute;
+	border:2px solid #708090;
+	font-size: 12.5pt;
+	font-weight: bold;
+	color: black;
+	background-color: rgb(255,255,255,0.9);
+}
+	#nome{	
+	top:27%;
+	left: 40%;
+	width: 20%;
+}
+#sobNome{
+	top:32%;
+	left: 40%;
+	width: 20%;
+}
+#telefone{
+	
+	top:37%;
+	left: 40%;
+	width: 10%;
+}
+#email{
+	
+	top:42%;
+	left: 40%;
+	width: 20%;
+}
+#senha{
+	
+	top:47%;
+	left: 40%;
+	width: 20%;
+}
+#confSenha{
+	
+	top:52%;
+	left: 40%;
+	width: 20%;
+}
+#masculino{
+	
+	top:56%;
+	left: 40%;
+}
+#feminino{
+	
+	top:56%;
+	left: 50%;
+}
+#F{
+	position: absolute;
+	color: white;
+	top:54%;
+	left: 41.3%;
+	font-weight: bold;
+	font-size: 13.5pt;
+}
+#M{
+	position: absolute;
+	top:54%;
+	left: 51.3%;
+	color: white;
+	font-weight: bold;
+	font-size: 13.5pt;
+}
+#cadastrar{
+	left: 40.2%;
+}
+#cancelar{
+    
+	left: 52.2%;
+}
+.botoes{
+	      top:62%;
+          position: absolute;
+          background-color: #A0522D;
+	      border: 2px solid #A0522D;
+	      color: white;
+	    font-size: 22pt;
+    
+}
+.botoes:hover{
+	background-color: #1E90FF;
+	border: 2px solid#1E90FF;
+}
+
+
+

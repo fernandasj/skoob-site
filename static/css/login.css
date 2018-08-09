@@ -1,0 +1,87 @@
+body{
+	background-image: url(../imagens/502079.jpg);
+}
+#logo{
+	background-color: #FFFAFA;
+    border-radius: 100px;
+}
+#logo{
+	position:absolute;
+	top:26%;
+	left:45.5%;
+}
+#id_username{
+	height: 4%;
+	width: 20%;
+	position: absolute;
+	top:50%;
+	left:40%;
+    border-radius:1px;
+    border:2px solid gray;
+    font-family: georgia;
+    color: white;
+    background-color: rgba(10,23,55,0.5);
+
+}
+#id_username:focus{
+     border:2px solid #1E90FF;
+}
+#id_password{
+	height: 4%;
+	width: 20%;
+	position: absolute;
+	color: white;
+	top:57%;
+	left:40%;
+    border-radius:1px;
+    border:2px solid gray;
+    font-family: georgia;
+    background-color: rgba(10,23,55,0.5);
+}
+#id_password:focus{
+     border:2px solid #1E90FF;
+}
+#checar{
+	position: absolute;
+	top:63%;
+	left:40%;
+}
+p{
+	position: absolute;
+	top:61.2%;
+	left:42%;
+	font-size: 10pt;
+	color:white;
+}
+#entrar{
+	position:absolute;
+	top:67%;
+	left:46.5%;
+	width: 7%;
+	height:4.5%;
+	font-family: georgia;
+	font-size: 14.4pt;
+	color:#FFFfFA;
+	background-color:#A0522D;
+	border:1px solid #A0522D;
+}
+#cadastro{
+	position: absolute;
+	top:5%;
+	left:76%;
+	width: 19%;
+	height:8.5%;
+	font-family: georgia;
+	font-size: 19.4pt;
+	color:#FFFfFA;
+	background-color:#A0522D;
+	border:1px solid #A0522D;
+}
+#cadastro:hover{
+	background-color:#00BFFF;
+	border:1px solid #00BFFF;
+}
+#entrar:hover{
+    background-color:#00BFFF;
+	border:1px solid #00BFFF;
+}
