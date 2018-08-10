@@ -1,5 +1,5 @@
 body{
-	  background-image: url('../imagens/fundo1.jpg');
+	  background-image: url('../imagens/bg-login.jpeg');
 	  background-repeat: no-repeat;
 	  background-size: 100% 100%;
 }
@@ -9,7 +9,7 @@ body{
       top:1%;
 }
 #topo{
-     background-color:#F5F5DC; 
+     background-color:#F5F5DC;
      position: relative;
      top:-1%;
      left:-2%;
@@ -31,7 +31,7 @@ body{
 	color: black;
 	background-color: rgb(255,255,255,0.9);
 }
-	#nome{	
+	#nome{
 	top:27%;
 	left: 40%;
 	width: 20%;
@@ -42,36 +42,36 @@ body{
 	width: 20%;
 }
 #telefone{
-	
+
 	top:37%;
 	left: 40%;
 	width: 10%;
 }
 #email{
-	
+
 	top:42%;
 	left: 40%;
 	width: 20%;
 }
 #senha{
-	
+
 	top:47%;
 	left: 40%;
 	width: 20%;
 }
 #confSenha{
-	
+
 	top:52%;
 	left: 40%;
 	width: 20%;
 }
 #masculino{
-	
+
 	top:56%;
 	left: 40%;
 }
 #feminino{
-	
+
 	top:56%;
 	left: 50%;
 }
@@ -95,17 +95,17 @@ body{
 	left: 40.2%;
 }
 #cancelar{
-    
+
 	left: 52.2%;
 }
 .botoes{
-	      top:62%;
-          position: absolute;
-          background-color: #A0522D;
-	      border: 2px solid #A0522D;
-	      color: white;
-	    font-size: 22pt;
-    
+    top:62%;
+    position: absolute;
+    background-color: #A0522D;
+    border: 2px solid #A0522D;
+    color: white;
+    font-size: 22pt;
+
 }
 .botoes:hover{
 	background-color: #1E90FF;
