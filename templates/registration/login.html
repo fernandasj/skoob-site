@@ -4,20 +4,27 @@
 <head>
   <meta charset="utf-8">
   <title>{% block title %}Login{% endblock %}</title>
-  <link rel="stylesheet" href="{% static 'css/login.css' %}">
+  <link rel="stylesheet" href="{% static 'css/reseting.css' %}">
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
 <body>
-  <main>
-  {% block content %}
-  <h2>Login</h2>
-  <form method="post">
-    {% csrf_token %}
-    <div id="logoDiv"><img id="logo" src="{% static 'imagens/logo.png' %}" width="120px" height="129px"></div>
-    <input type="text" name="username" id="id_username"/><br>
-    <input type="password" name="password" id="id_password"/><br><br>
-    <button type="submit" id="entrar">Login</button>
-  </form>
-  {% endblock %}
-</main>
+
+  <section class="sec-login">
+    <div class="overflow"></div>
+    {% block content %}
+    <div class="box-formulario">
+      <div class="logo">
+        <img src="{% static 'imagens/logo.png' %}">
+      </div>
+      <form class="formulario" method="post">
+        {% csrf_token %}
+        <input type="text" name="username" id="id_username" placeholder="Username">
+        <input type="password" name="password" id="id_password" placeholder="Senha">
+        <input type="submit" value="Entrar">
+      </form>
+      <h5>Não é cadastrado? <a href="#">Registre-se</a></h5>
+      {% endblock %}
+    </div>
+  </section>
 </body>
 </html>
