@@ -10,9 +10,8 @@ def registerUser(request):
             user = User.objects.create_user(username=form['username'].value(),
                              email=form['email'].value(),
                              password=form['password'].value())
-            user.save(commit=False)
             profile = form.save(commit=False)
-            profile.user = request.user
+            profile.user = user
             profile.save()
             return redirect('users:login')
     else:
