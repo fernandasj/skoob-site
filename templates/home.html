@@ -1,12 +1,36 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+	<head>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<link rel="stylesheet" href="{% static 'css/style.css' %}">
+	</head>
+	<body>
 
-{% block title %}Home{% endblock %}
+		<div class="topnav">
+		  <a class="active" href="#home">Home</a>
+		  <div class="search-container">
+		    <form action="#">
+		      <input type="text" placeholder="Search.." name="search">
+		      <button type="submit"><i class="fa fa-search"></i></button>
+		    </form>
+		  </div>
+		</div>
+		<br>
+		<div style="padding-left:16px">
+			{% block content %}
+			{% if user.is_authenticated %}
+			  Hi {{ user.username }}!
+			  <p><a href="{% url 'logout' %}">logout</a></p>
+			{% else %}
+			  <p>You are not logged in</p>
+			  <a href="{% url 'login' %}">login</a>
+			{% endif %}
+			{% endblock %}
+		</div>
 
-{% block content %}
-{% if user.is_authenticated %}
-  Hi {{ user.username }}!
-  <p><a href="{% url 'logout' %}">logout</a></p>
-{% else %}
-  <p>You are not logged in</p>
-  <a href="{% url 'login' %}">login</a>
-{% endif %}
-{% endblock %}
+	</body>
+</html>
+
+
+
