@@ -4,16 +4,13 @@
           <meta charset="utf-8">
           <title>{% block title %}Register User{% endblock %}</title>
           <link rel="stylesheet" href="{% static 'css/cadastro.css' %}">
-          <!-- <link rel="stylesheet" href="{% static 'css/reseting.css' %}"> -->
      </head>
      <body>
           <div id="topo"><img src="{% static 'imagens/logo.png' %}" width="6%" heigth="6%" id="logo">
           </div>
           <p ID="TITULO">Crie sua conta</p>
-          <form action="{% url 'users:registerUser' %}" method="post">
-               {% csrf_token %}
-               {{ form.as_p }}
-               <!-- <label for="name">Nome:</label>
+          <form action="{% url 'users:registerUser' %}" method="post">{% csrf_token %}
+               <label for="name">Nome:</label>
           	<input class="entradas" id="nome" type="text" name="name">
 
                <label for="email">Email:</label>
@@ -24,13 +21,17 @@
 
                <label for="username">Username:</label>
                <input class="entradas" id="confSenha" type="text" name="username">
- -->
-               <!-- <label for="gender">Sexo:</label>
-               <input class="entradas" id="feminino" type="radio" id="feminino" value="faminino" name="gender"><p id="F">Feminino</p>
-               <input class="entradas" id="masculino" type="radio" id="masculino" value="masculino" name="gender><p id="M">Masculino</p> -->
+
+               <label for="gender">Sexo:</label>
+               <select name="gender">
+                 <option value="Feminino">Feminino</option>
+                 <option value="Masculino">Masculino</option>
+               </select>
 
                <input type="submit" name="cadastrar" value="Cadastrar" id="cadastrar" class="botoes">
-               <input type="button" name="cancelar" value="Cancelar" id="cancelar" class="botoes" formaction="/" formmethod="post">
+               <a href="{% url 'users:login' %}">
+                    <input type="button" name="cancelar" value="Cancelar" id="cancelar">
+               </a>
           </form>
      </body>
 </html>
