@@ -2,6 +2,8 @@ from .models import Profile
 from .forms import RegisterUser
 from django.shortcuts import redirect, render
 from django.contrib.auth.models import User
+from django.contrib.auth.decorators import login_required
+
 
 def registerUser(request):
     if request.method == 'POST':
@@ -18,3 +20,9 @@ def registerUser(request):
         form = RegisterUser()
         print (form.errors)
     return render(request, '../templates/registration/cadastro.html', {'form': form})
+
+
+@login_required(login_url='/accounts/login/')
+def home(request):
+    return render(request, '../templates/home.html')
+
