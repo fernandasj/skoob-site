@@ -19,8 +19,6 @@
             <input type="text" name="username" placeholder="Username">
           	<input type="text" name="email" placeholder="Email">
           	<input type="text" name="password" placeholder="Senha">
-
-<<<<<<< HEAD
                <label for="email">Email:</label>
           	<input class="entradas" id="email" type="email" name="email">
 
@@ -38,20 +36,8 @@
 
                <input type="submit" name="cadastrar" value="Cadastrar" id="cadastrar" class="botoes">
                <a href="{% url 'users:login' %}">
-                    <input type="button" name="cancelar" value="Cancelar" id="cancelar">
+                  <input type="button" name="cancelar" value="Cancelar" id="cancelar">
                </a>
-=======
-            <div class="select">
-              <label for="gender">Sexo:</label>
-              <select name="gender" class="right">
-                <option value="Feminino">Feminino</option>
-                <option value="Masculino">Masculino</option>
-              </select>
-              <div class="clear"></div>
-            </div>
-               
-            <input type="submit" name="cadastrar" value="Cadastrar">
->>>>>>> 028b6a5d7dc701e418382ba937de540deab3bf7d
           </form>
           <h5>Já é cadastrado? <a href="{% url 'users:login' %}">Faça seu login</a></h5>
           </div>
