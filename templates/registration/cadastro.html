@@ -1,37 +1,38 @@
 {% load static %}
 <html>
-     <head>
+  <head>
           <meta charset="utf-8">
           <title>{% block title %}Register User{% endblock %}</title>
-          <link rel="stylesheet" href="{% static 'css/cadastro.css' %}">
-     </head>
-     <body>
-          <div id="topo"><img src="{% static 'imagens/logo.png' %}" width="6%" heigth="6%" id="logo">
+          <link rel="stylesheet" href="{% static 'css/reseting.css' %}">
+          <link rel="stylesheet" href="{% static 'css/style.css' %}">
+  </head>
+  <body>
+      <section class="section">
+        <div class="overflow"></div>
+        <div class="box-formulario">
+          <div class="logo">
+            <img src="{% static 'imagens/logo.png' %}">
           </div>
-          <p ID="TITULO">Crie sua conta</p>
-          <form action="{% url 'users:registerUser' %}" method="post">{% csrf_token %}
-               <label for="name">Nome:</label>
-          	<input class="entradas" id="nome" type="text" name="name">
+          <h4>Cadastre-se</h4>
+          <form class="formulario " action="{% url 'users:registerUser' %}" method="post">{% csrf_token %}
+          	<input type="text" name="name" placeholder="Nome">
+            <input type="text" name="username" placeholder="Username">
+          	<input type="text" name="email" placeholder="Email">
+          	<input type="text" name="password" placeholder="Senha">
 
-               <label for="email">Email:</label>
-          	<input class="entradas" id="email" type="text" name="email">
-
-               <label for="password">Password:</label>
-          	<input class="entradas" id="senha" type="text" name="password">
-
-               <label for="username">Username:</label>
-               <input class="entradas" id="confSenha" type="text" name="username">
-
-               <label for="gender">Sexo:</label>
-               <select name="gender">
-                 <option value="Feminino">Feminino</option>
-                 <option value="Masculino">Masculino</option>
-               </select>
-
-               <input type="submit" name="cadastrar" value="Cadastrar" id="cadastrar" class="botoes">
-               <a href="{% url 'users:login' %}">
-                    <input type="button" name="cancelar" value="Cancelar" id="cancelar">
-               </a>
+            <div class="select">
+              <label for="gender">Sexo:</label>
+              <select name="gender" class="right">
+                <option value="Feminino">Feminino</option>
+                <option value="Masculino">Masculino</option>
+              </select>
+              <div class="clear"></div>
+            </div>
+               
+            <input type="submit" name="cadastrar" value="Cadastrar">
           </form>
-     </body>
+          <h5>Já é cadastrado? <a href="{% url 'users:login' %}">Faça seu login</a></h5>
+          </div>
+      </section>
+  </body>
 </html>
