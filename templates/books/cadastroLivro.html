@@ -1,0 +1,32 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>{% block title %}Register Book{% endblock %}</title>
+	<link rel="stylesheet" type="text/css" href="cadastroLivro.css">
+	<style type="text/css">
+	</style>
+</head>
+<body>
+   <section>
+		<form class="formulario" action="{% url 'books:register'%}" method="post">{% csrf_token %}
+			<div class="container">
+				<div class="box">
+					<label for="titulo">Título:</label>
+					<input type="text" name="titulo" placeholder="Título">
+					<label for="autor">Autor:</label>
+					<input type="text" name="autor" placeholder="Autor">
+					<p>Editora:</p>
+					<input type="text" name="editora" placeholder="Editora">
+				    <label>Código ISBN:</label>
+					<input type="text" name="isbn" placeholder="ISBN">
+					<p>Selecione imagem:</p>
+				<input type="file" name="imagem" placeholder="selecione imagem"  accept="image/x-png,image/gif,image/jpeg">
+				<input type="submit" name="cadatrarLivro" placeholder="Cadastrar">
+				</div>
+			</div>
+		</form>
+    <section>
+</body>
+</html>
