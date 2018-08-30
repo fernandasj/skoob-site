@@ -4,7 +4,7 @@ div.overflow{
 	background: rgba(40,40,42,0.8);
 }
 
-section.section{
+section.secao{
 	width: 100vw;
 	height: 100vh;
 	background-image: url('../imagens/bg-login.jpeg');
@@ -109,3 +109,35 @@ div.box-formulario{
 	text-decoration: underline;
 }
 
+/**
+ * 					HOME
+ * --------------------------------------
+ */
+form.search{
+	width: 250px;
+	min-width: 135px;
+}
+form.search div:first-child{
+	width: 90%;
+}
+a.active-link{
+	color: hsl(217, 71%, 53%);
+}
+section.banner{
+	padding: 0 !important;
+}
+section.banner img{
+	width: 100%;	
+}
+
+div.carousel-container{
+	height: 350px;
+}
+
+section.conteudo{
+	padding-top: 0.5rem;
+	border-top: 3px solid hsl(204, 86%, 53%);
+	background-color: white;
+	margin-top: -3rem;
+	z-index: 3;
+}
