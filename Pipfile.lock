@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "e0bb950a186fedf047167d8a959c4eff1a723caadba0c262fbc62db144f2d4c3"
+            "sha256": "19cf667d9c911bf4f35f5913c6ddb02f806511d8a1347b686c0afaaaf2e42cc8"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -18,11 +18,11 @@
     "default": {
         "django": {
             "hashes": [
-                "sha256:7f246078d5a546f63c28fc03ce71f4d7a23677ce42109219c24c9ffb28416137",
-                "sha256:ea50d85709708621d956187c6b61d9f9ce155007b496dd914fdb35db8d790aec"
+                "sha256:04f2e423f2e60943c02bd2959174b844f7d1bcd19eabb7f8e4282999958021fd",
+                "sha256:e1cc1cd6b658aa4e052f5f2b148bfda08091d7c3558529708342e37e4e33f72c"
             ],
             "index": "pypi",
-            "version": "==2.1"
+            "version": "==2.1.1"
         },
         "pillow": {
             "hashes": [
@@ -66,6 +66,14 @@
                 "sha256:ffb9ef1de172603304d9d2819af6f5ece76f2e85ec10692a524dd876e72bf277"
             ],
             "version": "==2018.5"
+        },
+        "sorl-thumbnail": {
+            "hashes": [
+                "sha256:1cc6d913fe4f1224e479f25a23ec2ad3ca71c3154919a2c9463b07e7fbe11ac2",
+                "sha256:c5ef989da07d31925754922ce95783fd2b1f8735124c0510884633eb32a4cd3e"
+            ],
+            "index": "pypi",
+            "version": "==12.4.1"
         }
     },
     "develop": {}

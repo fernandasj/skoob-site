@@ -39,7 +39,13 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'users',
     'books',
+    #images
+    'sorl.thumbnail',
 ]
+
+SOUTH_MIGRATION_MODULES = {
+    'easy_thumbnails': 'easy_thumbnails.south_migrations',
+}
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -125,6 +131,18 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
+
 #images
-MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
+MEDIA_URL = 'media/'
+# easy_thumbnails
+
+THUMBNAIL_HIGH_RESOLUTION = True
+
+THUMBNAIL_PROCESSORS = (
+    'easy_thumbnails.processors.colorspace',
+    'easy_thumbnails.processors.autocrop',
+    'easy_thumbnails.processors.scale_and_crop',
+    'easy_thumbnails.processors.filters',
+)

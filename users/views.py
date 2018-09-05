@@ -21,11 +21,6 @@ def registerUser(request):
         print (form.errors)
     return render(request, '../templates/registration/cadastro.html', {'form': form})
 
-
-@login_required(login_url='/accounts/login/')
-def home(request):
-    return render(request, '../templates/home.html')
-
 @login_required
 def UserEdit(request, pk):
      profile = get_object_or_404(Post, pk=pk)
