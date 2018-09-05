@@ -1,4 +1,4 @@
-{% load static %}
+{% load thumbnail %}
 {% include "header.html" %}
 <div class="tabs is-centered">
   <ul>
@@ -10,23 +10,23 @@
 </div>
 
 			<section class="livros">
-				
+
 				{% for book in books %}
-					<div class="image  box-livro left">
+					<div>
 					  <a href="#">
-					  	{{ book.foto }}
+					  	<img src="{% thumbnail book.livro.capa 1000x1000 %}" alt="">
 					  </a>
 					</div>
 				{% endfor %}
 			</section>
 
-			
+
 		</div>
 	</div>
 </section>
 </section>
 {% include "footer.html" %}
-		
+
 
 
 

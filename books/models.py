@@ -4,7 +4,7 @@ from django.db import models
 class Livro(models.Model):
 
     capa = models.ImageField(
-        'Imagen da capa',
+        'Imagem da capa',
         upload_to='imagens/livros/',
         default='imagens/none/no-img.jpg'
     )

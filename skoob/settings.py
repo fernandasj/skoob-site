@@ -37,15 +37,11 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'easy_thumbnails',
     'users',
     'books',
     #images
-    'sorl.thumbnail',
 ]
-
-SOUTH_MIGRATION_MODULES = {
-    'easy_thumbnails': 'easy_thumbnails.south_migrations',
-}
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -135,7 +131,8 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 #images
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
-MEDIA_URL = 'media/'
+MEDIA_URL = '/media/'
+
 # easy_thumbnails
 
 THUMBNAIL_HIGH_RESOLUTION = True
