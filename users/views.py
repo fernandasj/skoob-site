@@ -39,3 +39,10 @@ def UserEdit(request, pk):
      else:
          form = RegisterUser(instance=post)
      return render(request, 'templates/cadastroEdit.html', {'form': form})
+
+@login_required
+def books(request):
+    books = Book.objects.all()
+    return render(request, 'templates/home.html', {
+        'books': books
+    })

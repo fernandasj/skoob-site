@@ -1,0 +1,107 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+	<head>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.1/css/bulma.min.css">
+		<link rel="stylesheet" href="{% static 'css/bulma-carousel.min.css' %}">
+		<link rel="stylesheet" href="{% static 'css/style.css' %}">
+    	<script defer src="https://use.fontawesome.com/releases/v5.1.0/js/all.js"></script>	
+	</head>
+	<body>
+	
+    	<header class="navbar is-transparent">
+    		<div class="container">
+    			<div class="navbar-brand">
+    		        <a class="navbar-item">
+    		            <img src="{% static 'imagens/logo.png' %}" alt="Skoob">
+    		        </a>
+    		        <span class="navbar-burger burger" data-target="navbar">
+    		        	<span></span>
+    		        	<span></span>
+    		        	<span></span>
+    		        </span>  
+    			</div>
+    			<div id="navbar" class="navbar-menu">
+    		        <div class="navbar-end has-text-centered-mobile">
+    		            <div class="navbar-item">
+    		              <form method="post" class="search">
+    		              	<div class="field has-addons">
+    		              	  <div class="control">
+    		              	    <input class="input is-small" type="text" placeholder="Search.." name="search">
+    		              	  </div>
+    		              	  <div class="control">
+    		              	    <button class="button is-small" type="submit"><i class="fa fa-search"></i></button>
+    		              	  </div>
+    		              	</div>
+    		              </form>
+    		            </div>
+    		            <a class="navbar-item active-link">
+    		              Home
+    		            </a>
+    		            <div class="navbar-item has-dropdown is-hoverable">
+    		                <a class="navbar-link" href="#">
+    		                  Explore
+    		                </a>
+    		                <div class="navbar-dropdown is-boxed">
+    		                  <a class="navbar-item" href="#">
+    		                    Livros
+    		                  </a>
+    		                  <a class="navbar-item" href="#">
+    		                    Autores
+    		                  </a>
+    		                  <a class="navbar-item" href="#">
+    		                    Editoras
+    		                  </a>
+    		                </div>
+    		            </div>
+    		            <div class="navbar-item">
+    		            	{% block content %}
+    		            	{% if user.is_authenticated %}
+    		            	  <a class="" href="{% url 'logout' %}">Sair</a>
+    		            	{% else %}
+    		            	  <a class="button is-info is-outlined" href="{% url 'login' %}">Entrar</a>
+    		            	{% endif %}
+    		            	{% endblock %}
+    		            </div>
+    		        </div>
+    			</div>  
+    		</div>
+    	</header>
+		
+		<section class="section banner is-medium">
+			<div class='carousel carousel-animated carousel-animate-slide' data-autoplay="true" data-delay="5000">
+			  <div class='carousel-container'>
+			    <div class='carousel-item has-background is-active'>
+			      <img class="is-background" id="is-active" src="{% static 'imagens/banner-harry-potter.jpg' %}">
+			    </div>
+			    <div class='carousel-item has-background'>
+			      <img class="is-background" src="http://2.bp.blogspot.com/-SKy0MzRocrE/TrlK67XM2_I/AAAAAAAADOM/isnxXaczhEY/s1600/ldr-posters-009.jpg" alt="Percy Jackson"/>
+			      <!-- adicionar legenda
+			      	<div class="title">Livro: Percy</div> 
+			      !-->
+			    </div>
+			  </div>
+			  <div class="carousel-navigation is-overlay">
+			      <div class="carousel-nav-left">
+			        <i class="fa fa-chevron-left" aria-hidden="true"></i>
+			      </div>
+			      <div class="carousel-nav-right">
+			        <i class="fa fa-chevron-right" aria-hidden="true"></i>
+			      </div>
+			  </div>
+			</div>
+			<section class="container conteudo">
+				<div class="columns is-desktop has-text-centered">
+					<div class="column">		
+						<div>
+							{% block contentSec %}
+							{% if user.is_authenticated %}
+							  <h2 class="has-text-weight-semibold is-size-4">Olá {{ user.username }}, bem vindo(a) ao Skoob!</h2>
+							{% else %}
+							  <h2 class="has-text-weight-semibold is-size-4">
+							  	Junte-se a comunidade de leitores do Brasil! 
+							  	<a class="button is-info is-primary" href="{% url 'login' %}">Cadastre-se</a></h2>
+							{% endif %}
+							{% endblock %}
+						</div>
+					
