@@ -1,4 +1,5 @@
 {% include "header.html" %}
+{% if user.is_authenticated %}
 <div class="tabs is-centered">
   <ul>
     <li><a href="{% url 'home' %}">Estante</a></li>
@@ -7,26 +8,23 @@
     <li><a href="{% url 'books:reading_books' %}">Lendo</a></li>
   </ul>
 </div>
+{% endif %}
 
-	<section class="livros">
+    <section class="livros">
 
-		{% for book in books %}
+        {% for book in books %}
             <figure class="image box-livro">
               <a href="">
-              	<img src="{{book.livro.capa.url}}" alt="{{photo.titulo}}">
+                <img src="{{book.livro.capa.url}}" alt="{{book.livro.titulo}}">
               </a>
               <figcaption class="has-text-weight-semibold">{{book.livro.titulo}}</figcaption>
             </figure>
-		{% endfor %}
+        {% endfor %}
 
-	</section>
+    </section>
 
 </div>
 </div>
 </section>
 </section>
 {% include "footer.html" %}
-
-
-
-

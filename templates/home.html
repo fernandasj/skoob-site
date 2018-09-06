@@ -1,27 +1,28 @@
 {% load staticfiles %}
 
-    {% include "header.html" %}
-    <div class="tabs is-centered">
-      <ul>
-        <li class="is-active"><a href="{% url 'home' %}">Estante</a></li>
-        <li><a href="{% url 'books:readed_books' %}">Lidos</a></li>
-        <li><a href="{% url 'books:read_books' %}">Ler</a></li>
-        <li><a href="{% url 'books:reading_books' %}">Lendo</a></li>
-      </ul>
-    </div>
+{% include "header.html" %}
 
-	<section class="livros">
+{% if user.is_authenticated %}
+<div class="tabs is-centered">
+  <ul>
+    <li><a href="{% url 'books:myBooks' %}">Estante</a></li>
+    <li><a href="{% url 'books:readed_books' %}">Lidos</a></li>
+    <li><a href="{% url 'books:read_books' %}">Ler</a></li>
+    <li><a href="{% url 'books:reading_books' %}">Lendo</a></li>
+  </ul>
+</div>
+{% endif %}
 
-		{% for book in books %}
-            <figure class="image box-livro">
-              <a href="">
-                <img src="{{book.livro.capa.url}}" alt="{{photo.titulo}}">
-              </a>
-              <figcaption class="has-text-weight-semibold">{{book.livro.titulo}}</figcaption>
-            </figure>
-		{% endfor %}
-
-	</section>
+<section class="livros">
+	{% for book in books %}
+  <figure class="image box-livro">
+    <a href="">
+      <img src="{{book.capa.url}}" alt="{{book.titulo}}">
+    </a>
+    <figcaption class="has-text-weight-semibold">{{book.titulo}}</figcaption>
+  </figure>
+	{% endfor %}
+</section>
 
 </div>
 </div>

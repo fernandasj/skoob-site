@@ -1,6 +1,7 @@
 from django.contrib.auth.models import User
 from django.db import models
 
+
 class Livro(models.Model):
 
     capa = models.ImageField(
@@ -27,6 +28,12 @@ class Livro(models.Model):
     editora = models.CharField(
         'Editora',
         max_length=50
+    )
+
+    sinopse = models.TextField(
+        'Sinopse',
+        max_length=700,
+        default='Sem Sinopse'
     )
 
     paginas = models.IntegerField(

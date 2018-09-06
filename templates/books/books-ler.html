@@ -1,19 +1,20 @@
 {% include "header.html" %}
+{% if user.is_authenticated %}
 <div class="tabs is-centered">
-	<ul>
-		<li><a href="{% url 'home' %}">Estante</a></li>
-		<li><a href="{% url 'books:readed_books' %}">Lidos</a></li>
-		<li><a href="{% url 'books:read_books' %}">Ler</a></li>
-		<li class="is-active"><a href="{% url 'books:reading_books' %}">Lendo</a></li>
-	</ul>
+  <ul>
+    <li><a href="{% url 'books:myBooks' %}">Estante</a></li>
+    <li><a href="{% url 'books:readed_books' %}">Lidos</a></li>
+    <li class="is-active"><a href="{% url 'books:read_books' %}">Ler</a></li>
+    <li><a href="{% url 'books:reading_books' %}">Lendo</a></li>
+  </ul>
 </div>
+{% endif %}
 
 	<section class="livros">
-
 		{% for book in books %}
             <figure class="image box-livro">
               <a href="">
-              	<img src="{{book.livro.capa.url}}" alt="{{photo.titulo}}">
+              	<img src="{{book.livro.capa.url}}" alt="{{book.livro.titulo}}">
               </a>
               <figcaption class="has-text-weight-semibold">{{book.livro.titulo}}</figcaption>
             </figure>
@@ -25,3 +26,7 @@
 </section>
 </section>
 {% include "footer.html" %}
+
+
+
+
