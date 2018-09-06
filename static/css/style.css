@@ -146,13 +146,13 @@ div.tabs{
 	margin-top: 2rem !important;
 }
 
-div.box-livro{
+.box-livro{
 	width: 128px;
 	height: 160px;
 	float: left;
 	margin: .5rem;
 }
-div.box-livro img{
+.box-livro img{
 	width: 100%;
 	height: 100%;
 }

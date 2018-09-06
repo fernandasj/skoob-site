@@ -1,22 +1,29 @@
 {% load static %}
 {% include "header.html" %}
 <div class="tabs is-centered">
-  <ul>
-    <li><a href="home.html">Estante</a></li>
-    <li class="is-active"><a href="books-lidos.html">Lidos</a></li>
-    <li><a href="books-ler.html">Ler</a></li>
-    <li><a href="books-lendo.html">Lendo</a></li>
-  </ul>
+	<ul>
+		<li><a href="{% url 'home' %}">Estante</a></li>
+		<li class="is-active"><a href="{% url 'books:read_books' %}">Lidos</a></li>
+		<li><a href="{% url 'books:my_books' %}">Ler</a></li>
+		<li><a href="{% url 'books:reading_books' %}">Lendo</a></li>
+	</ul>
 </div>
 
 <section class="livros">
 	
-	{% for book in books %}
-		<div class="image  box-livro left">
-		  <a href="#">
-		  	{{ book.foto }}
-		  </a>
-		</div>
+	{% for photo in photos %}
+        <figure class="image box-livro">
+          <a href="">
+          	<img src="{% thumbnail photo.capa 270x220 %}" alt="{{photo.titulo}}">
+          </a>
+          <figcaption class="has-text-weight-semibold">{{photo.titulo}}</figcaption>
+        </figure>
 	{% endfor %}
+
+</section>
+
+</div>
+</div>
+</section>
 </section>
 {% include "footer.html" %}
