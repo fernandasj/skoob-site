@@ -26,3 +26,23 @@ def registerUser(request):
 def home(request):
     return render(request, '../templates/home.html')
 
+@login_required
+def UserEdit(request, pk):
+     profile = get_object_or_404(Post, pk=pk)
+     if request.method == "POST":
+         form = RegisterUser(request.POST, instance=post)
+         if form.is_valid():
+             profile = form.save(commit=False)
+             profile.user = request.user
+             post.save()
+             return redirect('post_detail', pk=post.pk)
+     else:
+         form = RegisterUser(instance=post)
+     return render(request, 'templates/cadastroEdit.html', {'form': form})
+
+@login_required
+def books(request):
+    books = Book.objects.all()
+    return render(request, 'templates/home.html', {
+        'books': books
+    })
