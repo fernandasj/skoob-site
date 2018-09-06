@@ -40,7 +40,6 @@ class Livro(models.Model):
         verbose_name = 'livro'
         verbose_name_plural = 'livros'
 
-
 class UserBook(models.Model):
     LER = 'LER'
     LENDO = 'LENDO'
@@ -70,7 +69,7 @@ class UserBook(models.Model):
     )
 
     def __str__(self):
-        return self.livro.titulo
+        return self.titulo
 
     class Meta:
         verbose_name = 'userbook'

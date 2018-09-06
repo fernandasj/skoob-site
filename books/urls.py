@@ -1,8 +1,7 @@
 from django.urls import path, include
-# from .views import registerBook
-
+from .views import BooksSearchListView, home
 
 app_name = 'books'
 urlpatterns = [
-    # path('register/', registerUser, name='registerBook'),
+    path('books_search_list_view', BooksSearchListView, name='BooksSearchListView'),
 ]
