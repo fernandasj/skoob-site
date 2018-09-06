@@ -1,25 +1,24 @@
-{% load thumbnail %}
 {% include "header.html" %}
 <div class="tabs is-centered">
   <ul>
     <li><a href="{% url 'home' %}">Estante</a></li>
-    <li><a href="{% url 'books:read_books' %}">Lidos</a></li>
-    <li class="is-active"><a href="{% url 'books:my_books' %}">Ler</a></li>
+    <li><a href="{% url 'books:readed_books' %}">Lidos</a></li>
+    <li class="is-active"><a href="{% url 'books:read_books' %}">Ler</a></li>
     <li><a href="{% url 'books:reading_books' %}">Lendo</a></li>
   </ul>
 </div>
 
 	<section class="livros">
 
-		{% for photo in photos %}
+		{% for book in books %}
             <figure class="image box-livro">
               <a href="">
-              	<img src="{% thumbnail photo.capa 270x220 %}" alt="{{photo.titulo}}">
+              	<img src="{{book.livro.capa.url}}" alt="{{photo.titulo}}">
               </a>
-              <figcaption class="has-text-weight-semibold">{{photo.titulo}}</figcaption>
+              <figcaption class="has-text-weight-semibold">{{book.livro.titulo}}</figcaption>
             </figure>
 		{% endfor %}
-		
+
 	</section>
 
 </div>

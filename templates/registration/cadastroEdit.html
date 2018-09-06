@@ -13,7 +13,8 @@
           <div class="logo">
             <img src="{% static 'imagens/logo.png' %}">
           </div>
-          <h4>Cadastre-se</h4>
+          <h4>Minha conta</h4>
+          {% if profile %}
           <form class="formulario " action="{% url 'users:registerUser' %}" method="post">{% csrf_token %}
             <input type="text" name="name" placeholder="Nome">{{profile.name}}
             <input type="text" name="username" placeholder="Username">{{profile.username}}
@@ -28,7 +29,7 @@
               </select>
               <div class="clear"></div>
             </div>
-
+            {% endif %}
             <input type="submit" name="cadastrar" value="Cadastrar">
           </form>
           <h5>Já é cadastrado? <a href="{% url 'users:login' %}">Faça seu login</a></h5>

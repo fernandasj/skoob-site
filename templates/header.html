@@ -5,10 +5,10 @@
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.1/css/bulma.min.css">
 		<link rel="stylesheet" href="{% static 'css/bulma-carousel.min.css' %}">
 		<link rel="stylesheet" href="{% static 'css/style.css' %}">
-    	<script defer src="https://use.fontawesome.com/releases/v5.1.0/js/all.js"></script>	
+    	<script defer src="https://use.fontawesome.com/releases/v5.1.0/js/all.js"></script>
 	</head>
 	<body>
-	
+
     	<header class="navbar is-transparent">
     		<div class="container">
     			<div class="navbar-brand">
@@ -19,7 +19,7 @@
     		        	<span></span>
     		        	<span></span>
     		        	<span></span>
-    		        </span>  
+    		        </span>
     			</div>
     			<div id="navbar" class="navbar-menu">
     		        <div class="navbar-end has-text-centered-mobile">
@@ -43,8 +43,8 @@
     		                  Explore
     		                </a>
     		                <div class="navbar-dropdown is-boxed">
-    		                  <a class="navbar-item" href="#">
-    		                    Livros
+    		                  <a class="navbar-item" href="">
+    		                    Conta
     		                  </a>
     		                  <a class="navbar-item" href="#">
     		                    Autores
@@ -64,10 +64,10 @@
     		            	{% endblock %}
     		            </div>
     		        </div>
-    			</div>  
+    			</div>
     		</div>
     	</header>
-		
+
 		<section class="section banner is-medium">
 			<div class='carousel carousel-animated carousel-animate-slide' data-autoplay="true" data-delay="5000">
 			  <div class='carousel-container'>
@@ -77,7 +77,7 @@
 			    <div class='carousel-item has-background'>
 			      <img class="is-background" src="http://2.bp.blogspot.com/-SKy0MzRocrE/TrlK67XM2_I/AAAAAAAADOM/isnxXaczhEY/s1600/ldr-posters-009.jpg" alt="Percy Jackson"/>
 			      <!-- adicionar legenda
-			      	<div class="title">Livro: Percy</div> 
+			      	<div class="title">Livro: Percy</div>
 			      !-->
 			    </div>
 			  </div>
@@ -92,16 +92,16 @@
 			</div>
 			<section class="container conteudo">
 				<div class="columns is-desktop has-text-centered">
-					<div class="column">		
+					<div class="column">
 						<div>
 							{% block contentSec %}
 							{% if user.is_authenticated %}
 							  <h2 class="has-text-weight-semibold is-size-4">Olá {{ user.username }}, bem vindo(a) ao Skoob!</h2>
 							{% else %}
 							  <h2 class="has-text-weight-semibold is-size-4">
-							  	Junte-se a comunidade de leitores do Brasil! 
+							  	Junte-se a comunidade de leitores do Brasil!
 							  	<a class="button is-info is-primary" href="{% url 'login' %}">Cadastre-se</a></h2>
 							{% endif %}
 							{% endblock %}
 						</div>
-					
+

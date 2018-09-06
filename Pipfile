@@ -6,7 +6,6 @@ url = "https://pypi.org/simple"
 [packages]
 django = "*"
 pillow = "*"
-sorl-thumbnail = "*"
 easy-thumbnails = "*"
 
 [requires]
