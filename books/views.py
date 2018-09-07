@@ -6,7 +6,6 @@ from .models import UserBook, Livro
 
 def home(request):
     books = Livro.objects.all()
-    print(books)
     return render(request, 'home.html', {'books': books})
 
 
