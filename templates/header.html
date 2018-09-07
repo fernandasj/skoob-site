@@ -24,16 +24,16 @@
     			<div id="navbar" class="navbar-menu">
     		        <div class="navbar-end has-text-centered-mobile">
     		            <div class="navbar-item">
-    		              <form method="post" class="search">
-    		              	<div class="field has-addons">
-    		              	  <div class="control">
-    		              	    <input class="input is-small" type="text" placeholder="Search.." name="search">
-    		              	  </div>
-    		              	  <div class="control">
-    		              	    <button class="button is-small" type="submit"><i class="fa fa-search"></i></button>
-    		              	  </div>
-    		              	</div>
-    		              </form>
+    		              <form id="searchform" action="{% url 'books:search' %}" method="post" class="search">{% csrf_token %}
+                            <div class="field has-addons">
+                              <div class="control">
+                                <input class="input is-small" type="text" placeholder="Search.." name="search" required>
+                              </div>
+                              <div class="control">
+                                <button class="button is-small" type="submit"><i class="fa fa-search"></i></button>
+                              </div>
+                            </div>
+                          </form>
     		            </div>
     		            <a class="navbar-item active-link">
     		              Home

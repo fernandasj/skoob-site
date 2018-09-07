@@ -1,0 +1,63 @@
+<head>
+	<title>{{result1}} "{{query}}"{{result2}} | Skoob!</title>
+</head>
+
+<style>
+	body {
+		background: #EAEDF1;
+	}
+	img {
+		width: 6.25em;
+		height: 8.75em;
+	}
+	ul {
+		list-style: none;
+	}
+
+	li {
+		display: inline-block;;
+		width: 6.25em;
+		height: 8.75em;
+		padding: 0;
+		margin: 0.625em 1.25em;
+		border: solid 0.25em #fff;
+		border-radius:  0.3125em;
+		-webkit-box-shadow:  0px 0px  0.3125em 0px rgba(0, 0, 0, 0.25);
+		box-shadow:  0px 0px  0.3125em 0px rgba(0, 0, 0, 0.25);
+	}
+
+	.books-search{
+		border-bottom: 0.375em solid #20B2AA;
+	    background-color: lightgrey;
+	    width: 9.3em;
+	    height: 19em;
+	} 
+</style>
+
+<p><h2>{{result1}} <i>"{{query}}"</i>{{result2}}</h2></p>
+<br>
+<ul class="book-list">
+{% for livro in livros %}
+  <div class="books-search">
+	  <li class="book1"><a href="#link">
+		    <img src="{{livro.capa.url}}" alt="" />
+		    </a>
+		    <p>
+		    	<b>Título:</b><br>{{ livro.titulo }}<br><br>
+		    	<b>Autor:</b><br> {{ livro.autor}}
+		    </p>
+		    <h4></h2>
+	  </li>
+  </div>
+  <br>
+{% endfor %}
+</ul>
+
+
+
+<!-- 
+Para 'pegar' os demais valores do livro:
+genero = {{ livro.genero }}
+editora = {{ livro.editora }}
+paginas = {{ livro.paginas }}
+ -->
