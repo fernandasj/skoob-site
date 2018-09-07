@@ -9,6 +9,9 @@ def home(request):
     print(books)
     return render(request, 'home.html', {'books': books})
 
+def book_info(request, pk):
+    books = Livro.objects.get(pk=pk)
+    return render(request, 'books/book.html', {'books': books})
 
 @login_required(login_url='/accounts/login/')
 def myBooks(request):
