@@ -147,12 +147,24 @@ div.tabs{
 }
 
 .box-livro{
-	width: 128px;
-	height: 160px;
+	width: 140px;
+	height: 210px;
 	float: left;
 	margin: .5rem;
 }
+.box-livro a{
+	height: 100%;
+	color: #4a4a4a;
+}
+.box-livro p {
+	white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
 .box-livro img{
 	width: 100%;
-	height: 100%;
+	height: 88% !important;
+}
+.cont-nolog{
+	margin-bottom: 2rem;
 }

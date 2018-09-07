@@ -98,9 +98,12 @@
 							{% if user.is_authenticated %}
 							  <h2 class="has-text-weight-semibold is-size-4">Olá {{ user.username }}, bem vindo(a) ao Skoob!</h2>
 							{% else %}
-							  <h2 class="has-text-weight-semibold is-size-4">
-							  	Junte-se a comunidade de leitores do Brasil!
-							  	<a class="button is-info is-primary" href="{% url 'users:registerUser' %}">Cadastre-se</a></h2>
+							  <div class="cont-nolog">
+                                    <h2 class="has-text-weight-semibold is-size-4">
+                                        Junte-se a comunidade de leitores do Brasil!
+                                        <a class="button is-info is-primary" href="{% url 'users:registerUser' %}">Cadastre-se</a>
+                                    </h2>                     
+                              </div>
 							{% endif %}
 							{% endblock %}
 						</div>
