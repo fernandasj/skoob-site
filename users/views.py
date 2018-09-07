@@ -1,6 +1,9 @@
-from .forms import RegisterUser
-from django.shortcuts import redirect, render
+from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
+from django.shortcuts import redirect, render
+
+from .forms import RegisterUser
+from .models import Profile
 
 
 def registerUser(request):
@@ -18,4 +21,10 @@ def registerUser(request):
     else:
         form = RegisterUser()
         print(form.errors)
-    return render(request, '../templates/registration/cadastro.html', {'form': form})
+    return render(request, 'registration/cadastro.html', {'form': form})
+
+
+@login_required
+def profile(request):
+    profiles = Profile.objects.filter(user=request.user)
+    return render(request, 'registration/profile.html', {'profiles': profiles})
