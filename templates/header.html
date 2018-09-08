@@ -75,13 +75,13 @@
 			<div class='carousel carousel-animated carousel-animate-slide' data-autoplay="true" data-delay="5000">
 			  <div class='carousel-container'>
 			    <div class='carousel-item has-background is-active'>
-			         <a href="">
-                        <img class="is-background" id="is-active" src="{% static 'imagens/banner-harry-potter.jpg' %}">         
-                     </a>
+			         <a href="{% url 'books:book_info' pk=3 %}">
+                  <img class="is-background" id="is-active" src="{% static 'imagens/banner-harry-potter.jpg' %}">
+                </a>
 			    </div>
 			    <div class='carousel-item has-background'>
-			         <a href="">
-                        <img class="is-background" src="http://2.bp.blogspot.com/-SKy0MzRocrE/TrlK67XM2_I/AAAAAAAADOM/isnxXaczhEY/s1600/ldr-posters-009.jpg" alt="Percy Jackson"/>         
+			         <a href="{% url 'books:book_info' pk=8 %}">
+                        <img class="is-background" src="http://2.bp.blogspot.com/-SKy0MzRocrE/TrlK67XM2_I/AAAAAAAADOM/isnxXaczhEY/s1600/ldr-posters-009.jpg" alt="Percy Jackson"/>
                      </a>
 			    </div>
 			  </div>
@@ -106,9 +106,8 @@
                                     <h2 class="has-text-weight-semibold is-size-4">
                                         Junte-se a comunidade de leitores do Brasil!
                                         <a class="button is-info is-primary" href="{% url 'users:registerUser' %}">Cadastre-se</a>
-                                    </h2>                     
+                                    </h2>
                               </div>
 							{% endif %}
 							{% endblock %}
 						</div>
-
