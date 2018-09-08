@@ -1,0 +1,143 @@
+div.overflow{
+	width: 100%;
+	height: 100%;
+	background: rgba(40,40,42,0.8);
+}
+
+section.secao{
+	width: 100vw;
+	height: 100vh;
+	background-image: url('../imagens/bg-login.jpeg');
+	position: relative;
+	z-index: ;
+}
+
+div.logo{
+	width: 40%;
+	height: 100px;
+	margin: 20px auto;
+}
+div.logo img{
+	width: 100%;
+	height: 100%;
+}
+
+div.box-formulario{
+	width: 25%;
+	min-width: 200px; 
+	min-height: 200px;
+	padding: 15px 25px 20px 25px;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	border-radius: 10px;
+	background-color: rgba(255, 255, 255, .9);
+	transform: translate(-50%, -50%);
+}
+
+.formulario{
+	width: 100%;
+	height: 100%;
+}
+.formulario input {
+	width: 100%;
+	margin-bottom: 15px;
+	padding: 5px 10px;
+	background: transparent;
+	border: none;
+	color: #181a1c;
+	border-bottom: 1px solid #ccc; 
+}
+
+.formulario input{
+	outline: none;
+}
+
+.formulario div.select{
+	width: 100%;
+	padding: 5px 10px;
+	border-bottom: 1px solid #ccc;
+	margin-bottom: 15px;
+}
+.formulario label{
+	width: 15%;
+	color: #757575;
+	float: left;
+	 
+}
+.formulario select{
+	width: 85%;
+	border: none;
+	color: #757575;
+	background: transparent;
+}
+.formulario select:focus, .formulario input:focus{
+	outline: none;
+}
+
+.formulario input[type=submit]{
+	border-radius: 25px;
+	padding: 10px;
+	margin-top: 20px;
+	border: 1px solid #0FACF3 !important;
+	color: #0FACF3;
+	border: none;
+}
+.formulario input[type=submit]:hover{
+	background-color: #0FACF3;
+	color: white;
+}
+
+.box-formulario h4{
+	color: #383535;
+	font-weight: bold;
+	font-size: 20px;
+	margin-bottom: 15px;
+}
+
+.box-formulario h5{
+	color: #757575;
+	font-weight: 300;
+	text-align: center;
+}
+
+.box-formulario h5 a{
+	color: #0FACF3;
+	text-decoration: none;
+}
+.box-formulario h5 a:hover{
+	text-decoration: underline;
+}
+
+/**
+ * 					HOME
+ * --------------------------------------
+ */
+form.search{
+	width: 250px;
+	min-width: 135px;
+}
+form.search div:first-child{
+	width: 90%;
+}
+a.active-link{
+	color: hsl(217, 71%, 53%);
+}
+section.banner{
+	padding: 0 !important;
+}
+section.banner img{
+	width: 100%;	
+}
+
+div.carousel-container{
+	height: 350px;
+}
+
+section.conteudo{
+	padding-top: 0.5rem;
+	border-top: 3px solid hsl(204, 86%, 53%);
+	background-color: white;
+	margin-top: -3rem;
+	z-index: 3;
+}
