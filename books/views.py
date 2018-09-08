@@ -1,10 +1,8 @@
 
 from django.shortcuts import redirect, render
-from django.shortcuts import render
 import operator
 from django.db.models import Q
-
-from .forms import StatusBook
+from django.contrib.auth.decorators import login_required
 from .models import Livro, UserBook
 
 
@@ -43,7 +41,7 @@ def home(request):
 
 def book_info(request, pk):
     books = Livro.objects.get(pk=pk)
-    userbook = UserBook.objects.get(user=request.user, livro=pk)
+    userbook = UserBook.objects.filter(user=request.user, livro=pk)
     return render(request, 'books/book.html', {'books': books, 'userbook':userbook})
 
 @login_required(login_url='/accounts/login/')
