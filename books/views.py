@@ -1,8 +1,22 @@
-from django.shortcuts import render
+from django.shortcuts import redirect, render
 from django.contrib.auth.decorators import login_required
 
-from .models import UserBook, Livro
+from .forms import StatusBook
+from .models import Livro, UserBook
 
+@login_required(login_url='/accounts/login/')
+def statusBook(request, pk, status):   
+    try:
+        book = UserBook.objects.get(user=request.user, livro=pk)
+        book.status = status
+        book.save()
+    except UserBook.DoesNotExist:
+        li = Livro.objects.get(pk=pk)
+        book = UserBook(user=request.user, livro=li, status=status)    
+        book.save()  
+    userbook = UserBook.objects.get(user=request.user, livro=pk)
+    books = Livro.objects.get(pk=pk)
+    return render(request, 'books/book.html', {'books': books, 'userbook':userbook})
 
 def home(request):
     books = Livro.objects.all()
@@ -10,8 +24,8 @@ def home(request):
 
 def book_info(request, pk):
     books = Livro.objects.get(pk=pk)
-    print(books)
-    return render(request, 'books/book.html', {'books': books})
+    userbook = UserBook.objects.get(user=request.user, livro=pk)
+    return render(request, 'books/book.html', {'books': books, 'userbook':userbook})
 
 @login_required(login_url='/accounts/login/')
 def myBooks(request):

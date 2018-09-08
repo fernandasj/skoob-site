@@ -14,7 +14,7 @@
 <section class="livros">
 	{% for book in books %}
 		<div class=" box-livro">
-		  <a class="image" href="{% url 'books:book_info' pk=book.pk %}" title="{{book.livro.titulo}}">
+		  <a class="image" href="{% url 'books:book_info' pk=book.livro.pk %}" title="{{book.livro.titulo}}">
 		    <img src="{{book.livro.capa.url}}"" >  
 		    <p class="has-text-weight-semibold">{{book.livro.titulo}}</p>
 		  </a>
@@ -27,3 +27,5 @@
 </section>
 </section>
 {% include "footer.html" %}
+	</body>
+</html>

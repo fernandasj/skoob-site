@@ -1,6 +1,6 @@
 from django.urls import path
 
-from .views import book_info, reading_books, read_books, readed_books, myBooks
+from .views import book_info, reading_books, read_books, readed_books, myBooks, statusBook
 
 app_name = 'books'
 
@@ -9,5 +9,6 @@ urlpatterns = [
     path('ler/', read_books, name='read_books'),
     path('lendo/', reading_books, name='reading_books'),
     path('lido/', readed_books, name='readed_books'),
-    path('myBooks/', myBooks, name='myBooks')
+    path('myBooks/', myBooks, name='myBooks'),
+    path('statusBook/<int:pk>/<slug:status>', statusBook, name='statusBook'),
 ]

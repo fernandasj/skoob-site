@@ -77,22 +77,36 @@
 			<div class="hero-body">
 			<div class="container conteudo">
 				<div class="columns">
-					<div class="column is-2">
+					<div class="column is-narrow">
 					    <div class="img">
 							<img src="{{books.capa.url}}">
 					    </div>
 					</div>
 			    	<div class="column">
 			    		<div class="title is-3">{{books.titulo}}</div>
-	    				<form action="" method="">
+	    				
 	    				    <div class="dados">
-	    				    <label for="Ler"></label>
-	    				      <input type="button" class="button is-link is-hovered" name="Ler" value="Ler" onclick="msg()">
-	    				    <label for="Lendo"></label>
-	    				      <input type="button" class="button is-primary is-hovered" name="Lendo" value="Lendo" onclick="msg()">
-	    				    <label for="Lido"></label>
-	    				      <input type="button" class="button is-success is-hovered" name="Lido" value="Lido" onclick="msg()">
-	    				</form>
+	    				    	{% block v_status %}
+    				    		{% if userbook.status == 'LER' %}
+    				    			<a class="button is-link is-hovered" href="{% url 'books:statusBook' pk=books.pk status='LER' %}">Ler</a>
+    				    			<a class="button is-light" href="{% url 'books:statusBook' pk=books.pk status='LENDO' %}">Lendo</a>
+    				    			<a class="button is-light" href="{% url 'books:statusBook' pk=books.pk status='LIDO' %}">Lido</a>
+    				    		{% elif userbook.status == 'LENDO' %}
+									<a class="button is-light" href="{% url 'books:statusBook' pk=books.pk status='LER' %}">Ler</a>
+    				    			<a class="button is-primary is-hovered" href="{% url 'books:statusBook' pk=books.pk status='LENDO' %}">Lendo</a>
+    				    			<a class="button is-light" href="{% url 'books:statusBook' pk=books.pk status='LIDO' %}">Lido</a>
+    				    		{% elif userbook.status == 'LIDO' %}
+    				    			<a class="button is-light" href="{% url 'books:statusBook' pk=books.pk status='LER' %}">Ler</a>
+    				    			<a class="button is-light" href="{% url 'books:statusBook' pk=books.pk status='LENDO' %}">Lendo</a>
+    				    			<a class="button is-success is-hovered" href="{% url 'books:statusBook' pk=books.pk status='LIDO' %}">Lido</a>
+    				    		{% else %}
+	  								<a class="button is-light" href="{% url 'books:statusBook' pk=books.pk status='LER' %}">Ler</a>
+    				    			<a class="button is-light" href="{% url 'books:statusBook' pk=books.pk status='LENDO' %}">Lendo</a>
+    				    			<a class="button is-light" href="{% url 'books:statusBook' pk=books.pk status='LIDO' %}">Lido</a>
+	    				    	{% endif %}
+	    				    	{% endblock %}
+	    				    	 	
+
 	    		        <table class="dadosLivro">
 	    		            <tr>
 	    		                <td>Autor:</td>
