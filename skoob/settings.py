@@ -25,7 +25,7 @@ SECRET_KEY = '5z5+%e=5-$3dlk8lwx+ej9je7!c%*u&&ubj(rae=8i78gg!yqs'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['6879kvvc.apps.lair.io', 'localhost', '127.0.0.1']
 
 
 # Application definition

@@ -11,7 +11,7 @@ def Search(request):
         query = request.POST['search']
         result1 = 'Sua busca:';
         result2 = ', retornou os seguintes resultados.';
-        result3 = 'Esse livro não está cadastrado ;(';
+        result3 = 'Esse livro não está cadastrado.';
 
         livros = Livro.objects.filter(titulo__contains=query)
         if livros.exists():
@@ -41,7 +41,8 @@ def home(request):
 
 def book_info(request, pk):
     books = Livro.objects.get(pk=pk)
-    userbook = UserBook.objects.filter(user=request.user, livro=pk)
+    ###Removi user=request.user do filtro
+    userbook = UserBook.objects.filter(livro=pk)
     return render(request, 'books/book.html', {'books': books, 'userbook':userbook})
 
 @login_required(login_url='/accounts/login/')

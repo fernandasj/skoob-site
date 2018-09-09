@@ -8,6 +8,12 @@
     <script defer src="https://use.fontawesome.com/releases/v5.1.0/js/all.js"></script>
 
 <style>
+    .book-info{
+        display: inline-block;
+        width: 170px;
+        margin-left: -40px;
+        
+    }
 	header{
 		border-bottom: 3px solid hsl(204, 86%, 53%);
 	}
@@ -17,8 +23,8 @@
 
 	li {
 		display: inline-block;;
-		width: 6.25em;
-		height: 8.75em;
+		width: 6.15em;
+		height: 9.10em;
 		padding: 0;
 		margin: 0.625em 1.25em;
 		border: solid 0.25em #fff;
@@ -30,8 +36,8 @@
 	.books-search{
 		border-bottom: 0.375em solid #20B2AA;
 	    background-color: lightgrey;
-	    width: 9.3em;
-	    height: 19em;
+	    width: 12.3em;
+	    height: 20em;
 	}
 </style>
 </head>
@@ -116,9 +122,9 @@
 					{% for livro in livros %}
 					<div class="books-search">
 					  <li class="book1"><a href="{% url 'books:book_info' pk=livro.pk %}">
-						    <img src="{{livro.capa.url}}" alt="" />
+						    <img style="width: 6.15em; height: 8.65em" src="{{livro.capa.url}}" alt="" />
 						    </a>
-						    <p>
+						    <p class="book-info">
 						    	<b>Título:</b><br>{{ livro.titulo }}<br><br>
 						    	<b>Autor:</b><br> {{ livro.autor}}
 						    </p>
